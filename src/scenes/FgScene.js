@@ -10,6 +10,7 @@ export default class FgScene extends Phaser.Scene {
   
     preload() {
       this.load.image('ground', 'assets/backgrounds/ground.png')
+      
       // this.load.spritesheet( 'barbarianIdle' , 'assets/spriteSheets/barbarianIdle.png', {
       //     frameWidth: 680,
       //     frameHeight: 920
@@ -38,7 +39,7 @@ export default class FgScene extends Phaser.Scene {
      
       // this.player = new Player(this, 90, 400, 'barbarianIdle').setScale(3)
 
-      this.player = new Player(this, 90, 400, 'barbarianWalk').setScale(3)
+      this.player = new Player(this, 90, 350, 'barbarianWalk').setScale(3)
       
       this.anims.create({
         key: 'walk',
@@ -52,7 +53,7 @@ export default class FgScene extends Phaser.Scene {
 
       this.player.play('walk')
       
-      this.bandit = new Bandit (this, 600, 400, 'banditIdle').setScale(3)
+      this.bandit = new Bandit (this, 600, 350, 'banditIdle').setScale(3)
       
       // this.createAnimations();
        
@@ -77,6 +78,8 @@ export default class FgScene extends Phaser.Scene {
   
     createGround(x, y) {
       this.groundGroup.create(x, y, 'ground');
+
+     
     }
   
     createGroups() {
